@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Webhook for sending deployment message"
   s.description = "Webhook for sending deployment message"
   s.license     = "MIT"
+  s.require_paths = ["lib"]
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 

@@ -4,7 +4,7 @@ module DeploymentWebhook
   TASK_BASE = File.join(GEM_ROOT, 'lib', 'tasks')
 
   Dir[File.join(LIB_BASE, '*.rb')].each { |file| require(file) }
-  Dir[File.join(TASK_BASE, '*.rb')].each { |file| require(file) }
+  Dir[File.join(TASK_BASE, '*.rake')].each { |file| require(file) }
 
   def self.send_notification(deployment_webhook_url)
     Notifier.new(deployment_webhook_url).send_message

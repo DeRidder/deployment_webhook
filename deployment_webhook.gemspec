@@ -20,6 +20,4 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'webmock'
-  s.add_development_dependency 'capistrano'
-  s.add_development_dependency 'capistrano-rails'
 end

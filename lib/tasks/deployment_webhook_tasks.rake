@@ -1,4 +1,5 @@
 namespace :deploy do
+  desc 'Send a deployment notification for a given environment and application'
   task :notify do
     DeploymentWebhook::Notifier.new(
       deployment_url: ENV['DEPLOYMENT_WEBHOOK_URL'],
@@ -7,5 +8,3 @@ namespace :deploy do
     ).send_message
   end
 end
-
-after 'deploy', 'deploy:notify'

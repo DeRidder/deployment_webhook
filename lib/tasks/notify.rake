@@ -8,5 +8,3 @@ namespace :deploy do
     ).send_message
   end
 end
-
-after 'deploy', 'deploy:notify'

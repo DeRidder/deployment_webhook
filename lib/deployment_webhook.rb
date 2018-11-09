@@ -1,3 +1,6 @@
+require "deployment_webhook/version"
+require "deployment_webhook/railtie" if defined?(Rails)
+
 module DeploymentWebhook
   GEM_ROOT = File.dirname(File.dirname(__FILE__))
   LIB_BASE = File.join(GEM_ROOT, 'lib', 'deployment_webhook')

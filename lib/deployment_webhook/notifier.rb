@@ -3,7 +3,7 @@ module DeploymentWebhook
     attr_reader :deployment_webhook_url, :application, :stage
 
     def initialize(deployment_webhook_url:, application:, stage:)
-      @deployment_uri = deployment_webhook_url
+      @deployment_webhook_url = deployment_webhook_url
       @application = application
       @stage = stage
     end
@@ -14,7 +14,7 @@ module DeploymentWebhook
       require 'json'
 
       header = { 'Content-Type': 'text/json' }
-      uri = URI.parse(deployment_uri)
+      uri = URI.parse(deployment_webhook_url)
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Post.new(uri.request_uri, header)
 

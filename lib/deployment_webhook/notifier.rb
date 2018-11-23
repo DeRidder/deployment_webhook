@@ -24,7 +24,7 @@ module DeploymentWebhook
         stage: stage
       }.to_json
 
-      response http.request(request)
+      http.request(request)
     rescue StandardError => e
       # Do nothing
     end

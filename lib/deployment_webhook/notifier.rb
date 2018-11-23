@@ -26,7 +26,6 @@ module DeploymentWebhook
 
       http.request(request)
     rescue => e
-      Raven.capture_exception(e)
       # Do nothing
     end
 

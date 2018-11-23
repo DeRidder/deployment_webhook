@@ -1,6 +1,10 @@
 require_relative 'boot'
 
-require 'rails/all'
+require "active_model/railtie"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "action_view/railtie"
+require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 require "deployment_webhook"

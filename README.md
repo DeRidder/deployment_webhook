@@ -18,3 +18,6 @@ Or install it yourself as:
 ```bash
 $ gem install deployment_webhook
 ```
+
+# Environment variables
+DEPLOYMENT_WEBHOOK_URL=<link to dev dash application>

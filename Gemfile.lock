@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    deployment_webhook (0.1.21)
+    deployment_webhook (0.1.25)
       capistrano
       capistrano-rails
       rails
@@ -57,9 +57,8 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
-    capistrano-bundler (1.4.0)
+    capistrano-bundler (1.5.0)
       capistrano (~> 3.1)
-      sshkit (~> 1.2)
     capistrano-rails (1.4.0)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -85,7 +84,7 @@ GEM
     minitest (5.11.3)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (5.0.2)
+    net-ssh (5.1.0)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)

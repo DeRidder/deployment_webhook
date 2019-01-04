@@ -5,6 +5,7 @@ module DeploymentWebhook
   RSpec.describe Notifier, type: :model do
     subject(:notifier) do
       described_class.new(
+        deployment_webhook_url: 'http://example.com/webhooks/deployment',
         application: 'random_application',
         stage: 'production'
       )
@@ -13,7 +14,6 @@ module DeploymentWebhook
     describe '#send_message' do
       before do
         allow(notifier).to receive(:deployer).and_return('DeRidder')
-        allow(ENV).to receive(:[]).with('DEPLOYMENT_WEBHOOK_URL').and_return('http://example.com/webhooks/deployment')
       end
 
       it 'posts a HTTP request with the correct content' do

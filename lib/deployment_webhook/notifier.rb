@@ -1,8 +1,9 @@
 module DeploymentWebhook
   class Notifier
-    attr_reader :application, :stage
+    attr_reader :deployment_webhook_url, :application, :stage
 
-    def initialize(application:, stage:)
+    def initialize(deployment_webhook_url:, application:, stage:)
+      @deployment_webhook_url = deployment_webhook_url
       @application = application
       @stage = stage
     end
@@ -13,7 +14,7 @@ module DeploymentWebhook
       require 'json'
 
       header = { 'Content-Type': 'application/json' }
-      uri = URI.parse(ENV['DEPLOYMENT_WEBHOOK_URL'])
+      uri = URI.parse(deployment_webhook_url)
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Post.new(uri.request_uri, header)
 

@@ -13,7 +13,7 @@ module DeploymentWebhook
       require 'net/https'
       require 'json'
 
-      header = { 'Content-Type': 'text/json' }
+      header = { 'Content-Type': 'application/json' }
       uri = URI.parse(deployment_webhook_url)
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Post.new(uri.request_uri, header)

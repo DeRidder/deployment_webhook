@@ -16,6 +16,7 @@ module DeploymentWebhook
       header = { 'Content-Type': 'application/json' }
       uri = URI.parse(deployment_webhook_url)
       http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = uri.scheme == 'https'
       request = Net::HTTP::Post.new(uri.request_uri, header)
 
       request.body = {

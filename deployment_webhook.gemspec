@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
   s.require_paths = ["lib"]
 
-  s.files         = `git ls-files`.split($/)
+  s.files         = Dir['lib/**/*.rb']
 
   s.add_dependency "rails"
 

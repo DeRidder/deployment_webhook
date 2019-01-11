@@ -1,3 +1,5 @@
+require 'etc'
+
 module DeploymentWebhook
   class Notifier
     attr_reader :deployment_webhook_url, :application, :stage
